@@ -1,0 +1,136 @@
+html {
+    font-family: 'Roboto Slab', serif;
+    color: rgb(46, 45, 48);
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    width: 80%;
+    margin: 3rem auto;
+}
+
+ul,
+ol {
+    list-style: none;
+    margin: 50;
+    padding: 100;
+}
+
+
+/* Global components */
+
+.btn {
+    cursor: pointer;
+    font: inherit;
+    background-color: #007bff;
+    border: 1px solid #036dde;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: #0555ac;
+    border-color: #298df8;
+    color: white;
+}
+
+.btn.btn-alt {
+    background-color: transparent;
+    border-color: transparent;
+    color: rgb(89, 0, 255);
+}
+
+.btn.btn-alt:hover,
+.btn.btn-alt:active {
+    color: rgb(232, 90, 245);
+}
+
+
+/* Site-wide content / elements */
+
+#main-header {
+    padding: 2rem 10%;
+    margin-left: 160px;
+    height: 80px;
+    background-color: #86dfc0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#main-header img {
+    position: relative;
+    /* top: -25px;
+    margin-right: 0px; */
+    width: 180px;
+    height: 100px;
+}
+
+#main-header a {
+    text-decoration: none;
+    position: relative;
+    left: -50px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(19 100 165);
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* #main-header ul {
+    display: flex;
+}
+
+#main-header li {
+    margin-left: 2rem;
+}
+
+#main-header nav a {
+    color: white;
+    font-size: 1.25rem;
+}
+
+#main-header nav a:hover,
+#main-header nav a:active {
+    color: rgb(255, 217, 0);
+} */
+
+#leftsidebar {
+    background-color: #86dfc0;
+    height: 200%;
+    width: 220px;
+    position: fixed;
+    top: 150px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+#leftsidebar ol li a {
+    position: relative;
+    top: 100px;
+    left: -18px;
+    margin: 0px;
+    padding: 8px;
+    text-decoration: underline;
+    font-size: 20px;
+    color: white;
+    display: block;
+}
+
+#leftsidebar a:hover {
+    color: #040000;
+}

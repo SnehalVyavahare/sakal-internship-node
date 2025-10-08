@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('includes/head', { title: 'Add new post' }) %>
+        <link rel="stylesheet" href="/styles/forms.css" />
+</head>
+
+<body>
+    <%- include('includes/header') %>
+        <main>
+            <h1>Add a new Letter</h1>
+            <form action="/letters/<%= letter.Letter_No %>/edit" method="POST">
+               <h2>From</h2>
+                <div class="form-control">
+                    <label for="title">Sales Organisation</label>
+                    <input type="text" id="salesorg" value="<%= letter.Sales_Org %>" name="salesorg" required />
+                </div>
+                <div class="form-control">
+                    <label for="title">Sales Office</label>
+                    <input type="text" id="salesoffice" value="<%= letter.Sales_Office %>" name="salesoffice" required />
+                </div>
+                <div class="form-control">
+                    <label for="title">Sender Name</label>
+                    <input type="text" id="sender" value="<%= letter.Person_name %>" name="sender" required />
+                </div>
+            </div>
+            <div class="form-control">
+                <label for="lettertype">Letter Type</label>
+                <select id="lettertype" name="lettertype">
+                    <option value="<%= letter.Letter_id %>" >Select</option>
+        <% for (const lettertype of lettertypes) { %>
+    
+        <option value="<%= lettertype.Letter_id %>"><%= lettertype.Letter_Type %></option>
+    
+        <% } %>
+      </select>
+            </div>
+            </select>
+            </div>
+            <div class="form-control">
+                <label for="mode">Mode Of Transport</label>
+                <select id="mode" name="mode">
+                    <option value="<%= letter.mode_id %>">Select</option>
+    <% for (const  mode of modes) { %>
+    
+    <option value="<%= mode.mode_id %>"><%= mode.mode_type %></option>
+    
+    <% } %>
+    </select>
+                <h2>To</h2>
+                <div class="form-control">
+                    <label for="receiver">Select Receiver</label>
+                    <select id="receiver" name="receiver">
+                    <option value="<%= letter.Emp_id %>">Select</option>
+            <% for (const receiver of receivers) { %>
+
+            <option value="<%= receiver.Emp_id %>"><%= receiver.Emp_name %></option>
+
+            <% } %>
+          </select>
+                </div>
+
+                <button type="submit" class="btn">Update Letter</button>
+
+            </form>
+        </main>
+</body>
+
+</html>

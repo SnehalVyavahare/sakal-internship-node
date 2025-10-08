@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('includes/head', { title: 'Add new post' }) %>
+        <link rel="stylesheet" href="/styles/forms.css" />
+</head>
+
+<body>
+    <%- include('includes/header') %>
+        <main>
+            <h1>Update Receiver</h1>
+            <form action="/receivers/<%= receiver.Emp_id %>/edit" method="POST">
+                <!-- here POST - is used when to store the data in a file or a database
+        and GET - is used to while loading some page with query parameters...
+      here we wannna submit some data in a database so we will use POST here okaayyy boyyy!!!-->
+                <div class="form-control">
+                    <label for="title">Name</label>
+                    <input type="text" id="receiver" value="<%= receiver.Emp_name %>" name="receiver" required />
+                </div
+                <div class="form-control">
+                    <label for="title">Contact Number</label>
+                    <input type="text" id="contact" value="<%= receiver.Contact_no %>" name="contact" required />
+                </div
+                <div class="form-control">
+                    <label for="title">Email</label>
+                    <input type="text" id="email" value="<%= receiver.Email %>" name="email" required />
+                </div>
+
+                <div class="type">
+                    <label for="dept">Department</label>
+                    <select id="dept" name="dept">
+                    <option value="<%= receiver.Dept_id %>">Select</option>
+            <% for (const dept of depts) { %>
+
+            <option value="<%= dept.Dept_id %>"><%= dept.Dept_name %></option>
+
+            <% } %>
+            
+           </select>
+         <a class="btn1" href="/adddept">Add+</a>
+
+           </div>
+            </div>
+            <button type="submit" class="btn">Add Receiver</button>
+            
+            </form>
+        </main>
+</body>
+
+</html>

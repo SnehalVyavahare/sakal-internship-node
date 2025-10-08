@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <%- include('includes/head', { title: 'All Posts' }) %>
+        <link rel="stylesheet" href="/styles/letters.css" />
+</head>
+
+<body>
+    <%- include('includes/header') %>
+
+        <main id="all-posts">
+            <!-- <h1>All Letters</h1> -->
+
+            <div>
+                <table class="table">
+                    <h2>Couriers</h2>
+
+                    <thead>
+                        <th>Letter ID</th>
+                        <th>Location</th>
+                        <!-- <th>Sales Office</th> -->
+                        <th>Person Name</th>
+                        <th>Date & time</th>
+                        <th>Receiver name</th>
+                        <th>Letter Type</th>
+                        <th>Mode Type</th>
+                        <th>Status</th>
+                        <th>Edit Record</th>
+
+                    </thead>
+                    <tbody>
+                        <% for(const letter of letters) { %>
+                            <tr>
+                                <td data-label="ID">
+                                    <%= letter.Letter_No %>
+                                </td>
+                                <td data-label="Org">
+                                    <%= letter.Sales_Org %>
+                                </td>
+                                <!-- <td data-label="salesoffice">
+                                    <%= letter.Sales_Office %>
+                                </td> -->
+                                <td data-label="personname">
+                                    <%= letter.Person_name %>
+                                </td>
+                                <td data-label="datetime">
+                                    <%= letter.Date_time %>
+                                </td>
+                                <td data-label="name">
+                                    <%= letter.Emp_name %>
+                                </td>
+                                <td data-label="type">
+                                    <%= letter.Letter_Type %>
+                                </td>
+                                <td data-label="mode">
+                                    <%= letter.mode_type %>
+                                </td>
+                                <td data-label="status">
+                                    <%= letter.Status %>
+                                </td>
+                                <td data-label="edit">
+                                    <a class="btn btn-default btn-sm" value="<%= letter.Letter_No %>" href="/letters/<%= letter.Letter_No %>/edit">Edit
+                                        <span class="glyphicon glyphicon-edit"></span>
+                                      </a>
+                                </td>
+
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <%- include('includes/head', { title: 'All Posts' }) %>
+        <link rel="stylesheet" href="/styles/letters.css" />
+</head>
+
+<body>
+    <%- include('includes/header') %>
+
+        <main id="all-receivers">
+            <!-- <h1>All Letters</h1> -->
+
+            <div>
+                <table class="table">
+                    <h2>Receivers</h2>
+                    <!-- <button id="btn1" class="btn">Add Receiver</button> -->
+
+                    <thead>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Contact No.</th>
+                        <th>Email</th>
+                        <th>Department</th>
+                        <th>Edit</th>
+                    </thead>
+                    <tbody>
+                        <% var i = 0 %>
+
+                            <% for(const receiver of receivers) { %>
+                                <tr>
+                                    <td data-label="receiverId">
+                                        <%= ++i %>
+                                    </td>
+                                    <td data-label="receiver_name">
+                                        <%= receiver.Emp_name %>
+                                    </td>
+                                    <td data-label="contactno">
+                                        <%= receiver.Contact_no %>
+                                    </td>
+                                    <td data-label="email">
+                                        <%= receiver.Email %>
+                                    </td>
+                                    <td data-label="Department">
+                                        <%= receiver.Dept_name %>
+                                    </td>
+                                    <td> <a class="btn btn-default btn-sm" href="/receivers/<%= receiver.Emp_id%>/edit">Edit <span class="glyphicon glyphicon-edit"></span></a></td>
+                                </tr>
+                                <% } %>
+                    </tbody>
+                </table>
+            </div>
+</body>
+
+</html>

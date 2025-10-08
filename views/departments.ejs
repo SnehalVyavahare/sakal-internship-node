@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('includes/head', { title: 'All Posts' }) %>
+    <link rel="stylesheet" href="/styles/letters.css" />
+  </head>
+
+  <body>
+    <%- include('includes/header') %>
+
+    <main id="all-receivers">
+      <!-- <h1>All Letters</h1> -->
+
+      <div>
+        <table class="table">
+      <h2>Departments</h2>
+      <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Status</th>
+      </thead>
+      <tbody>
+            <% var i = 0 %>
+            
+            <% for(const depart of departs) { %>
+            <tr>
+              <td><%= ++i %></td>
+              <td data-label="depart_name"><%= depart.Dept_name %></td>
+              <td data-label="status"><%= depart.IsActive %></td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+  </body>
+</html>

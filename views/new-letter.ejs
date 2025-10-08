@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('includes/head', { title: 'Add new post' }) %>
+        <link rel="stylesheet" href="/styles/forms.css" />
+</head>
+
+<body>
+    <%- include('includes/header') %>
+        <main>
+            <h1>Inward Courier</h1>
+            <form action="/letters" method="POST">
+                <!-- here POST - is used when to store the data in a file or a database
+        and GET - is used to while loading some page with query parameters...
+      here we wannna submit some data in a database so we will use POST here okaayyy bayyy!!!-->
+                <h2>From</h2>
+                <div class="form-control">
+                    <label for="title">Location </label>
+                    <input type="text" id="location" name="location" required />
+                </div>
+                <!-- <div class="form-control">
+                    <label for="title">Branch Office </label>
+                    <input type="text" id="officename" name="officename" required />
+                </div> -->
+                <div class="form-control">
+                    <label for="title">Sender Name</label>
+                    <input type="text" id="sender" name="sender" required />
+                </div>
+                </div>
+                <!-- <div class="form-control"> -->
+
+                <div class="types">
+                    <div class="type">
+
+                        <label for="lettertype">Letter Type</label>
+                        <select id="lettertype" name="lettertype">
+                    <option>Select</option>
+                    <% for (const lettertype of lettertypes) { %>
+                        
+                        <option value="<%= lettertype.Letter_id %>"><%= lettertype.Letter_Type %></option>
+                        
+                        <% } %>
+                    </select>
+
+                    </div>
+                    <!-- </select> -->
+                    <!-- </div> -->
+                    <!-- <div class="form-control"> -->
+                    <div class="type">
+                        <label for="mode">Mode Of Transport</label>
+                        <select id="mode" name="mode">
+                        <option>Select</option>
+                        <% for (const  mode of modes) { %>
+                            
+                            <option value="<%= mode.mode_id %>"><%= mode.mode_type %></option>
+                            
+                            <% } %>
+                            
+                        </select>
+                    </div>
+                </div>
+
+                <h2>To</h2>
+
+                <div class="types">
+                    <div class="type">
+                        <label for="receiver">Receiver Name</label>
+                        <select id="receiver" name="receiver">
+                    <option>Select</option>
+            <% for (const receiver of receivers) { %>
+
+            <option value="<%= receiver.Emp_id %>"><%= receiver.Emp_name %></option>
+
+            <% } %>
+            
+           </select>
+                        <a class="btn1" href="/addReceiver">Add+</a>
+
+                    </div>
+                    <div class="type">
+                        <label for="dept">Department</label>
+                        <select id="dept" name="dept">
+                    <option>Select</option>
+            <% for (const dept of depts) { %>
+
+            <option value="<%= dept.Dept_id %>"><%= dept.Dept_name %></option>
+
+            <% } %>
+            
+           </select>
+                        <a class="btn1" href="/adddept">Add+</a>
+
+                    </div>
+                </div>
+
+                <button type="submit" class="btn">Add Letter</button>
+
+            </form>
+        </main>
+</body>
+
+</html>

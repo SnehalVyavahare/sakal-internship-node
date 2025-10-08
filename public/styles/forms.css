@@ -1,0 +1,67 @@
+#main-header {
+    height: 18px;
+}
+
+form {
+    max-width: 30rem;
+    margin: 2rem auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+input,
+textarea,
+select {
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid rgb(204, 204, 204);
+}
+
+input:focus,
+textarea:focus {
+    background-color: rgb(237, 228, 255);
+}
+
+input,
+textarea {
+    width: 100%;
+}
+
+.form-control {
+    /* display: flex; */
+    margin: 0.5rem 0;
+}
+
+
+.btn1{
+    text-decoration: none;
+    background-color: #007bff;
+    border-radius: 3px;
+    font-size: 1.2rem;
+    width: 30px;
+    padding: 3px 8px;
+    margin-left: 10px;
+    border: 1px solid black;
+    color: white;
+}
+
+.btn1:hover{
+    background-color: #0966ca;
+}
+
+.types{
+    display: flex;
+}
+
+.type{
+    margin: 12px;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('includes/head', { title: 'Add new post' }) %>
+        <link rel="stylesheet" href="/styles/forms.css" />
+</head>
+
+<body>
+    <%- include('includes/header') %>
+        <main>
+            <h1>Add a Department</h1>
+            <form action="/adddept" method="POST">
+                <!-- here POST - is used when to store the data in a file or a database
+        and GET - is used to while loading some page with query parameters...
+      here we wannna submit some data in a database so we will use POST here okaayyy boyyy!!!-->
+                <h2>From</h2>
+                <div class="form-control">
+                    <label for="title">Department Name</label>
+                    <input type="text" id="Dept_name" name="Dept_name" required />
+                </div
+            </div>
+            <button type="submit" class="btn">Add Department</button>
+            
+            </form>
+        </main>
+</body>
+
+</html>
